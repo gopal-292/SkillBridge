@@ -1,27 +1,44 @@
+import { Link } from "react-router-dom";
 function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg bg-white border-bottom">
+
             <div className="container">
 
-                <a className="navbar-brand fw-bold" href="/">
+                <Link
+                    className="navbar-brand fw-bold"
+                    to="/"
+                >
                     SkillBridge
-                </a>
+                </Link>
 
                 <div className="navbar-nav ms-auto">
-                    <a className="nav-link" href="/">
+
+                    <Link
+                        className="nav-link"
+                        to="/"
+                    >
                         Home
-                    </a>
+                    </Link>
 
-                    <a className="nav-link" href="/login">
+                    <Link
+                        className="nav-link"
+                        to="/login"
+                    >
                         Login
-                    </a>
+                    </Link>
 
-                    <a className="nav-link" href="/register">
+                    <Link
+                        className="nav-link"
+                        to="/register"
+                    >
                         Register
-                    </a>
+                    </Link>
+
                 </div>
 
             </div>
+
         </nav>
     );
 }
