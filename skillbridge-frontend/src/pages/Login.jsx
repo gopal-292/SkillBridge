@@ -2,29 +2,80 @@ function Login() {
     return (
         <div className="container py-5">
 
-            <h2 className="text-center">
-                Login to SkillBridge
-            </h2>
+            <div className="auth-container">
 
-            <form className="mt-4">
+                <h2 className="text-center mb-2">
+                    Welcome Back
+                </h2>
 
-                <input
-                    type="email"
-                    className="form-control mb-3"
-                    placeholder="Enter Email"
-                />
+                <p className="text-center text-muted mb-4">
+                    Login to your SkillBridge account
+                </p>
 
-                <input
-                    type="password"
-                    className="form-control mb-3"
-                    placeholder="Enter Password"
-                />
+                <form>
 
-                <button className="btn btn-primary w-100">
-                    Login
-                </button>
+                    <div className="mb-3">
+                        <label className="form-label">
+                            Email
+                        </label>
 
-            </form>
+                        <input
+                            type="email"
+                            className="form-control"
+                            placeholder="Enter your email"
+                            required
+                        />
+                    </div>
+
+                    <div className="mb-3">
+                        <label className="form-label">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            className="form-control"
+                            placeholder="Enter your password"
+                            required
+                        />
+                    </div>
+
+                    <div className="d-flex justify-content-between mb-3">
+
+                        <div>
+                            <input
+                                type="checkbox"
+                                className="form-check-input me-2"
+                            />
+
+                            <label>
+                                Remember me
+                            </label>
+                        </div>
+
+                        <a href="/forgot-password">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+                    <button
+                        type="submit"
+                        className="btn btn-primary w-100"
+                    >
+                        Login
+                    </button>
+
+                </form>
+
+                <p className="text-center mt-4">
+                    Don't have an account?{" "}
+                    <a href="/register">
+                        Register
+                    </a>
+                </p>
+
+            </div>
 
         </div>
     );
