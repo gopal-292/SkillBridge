@@ -20,6 +20,12 @@ function Navbar() {
                     >
                         Home
                     </Link>
+                    <Link
+    className="nav-link"
+    to="/courses"
+>
+    Courses
+</Link>
 
                     <Link
                         className="nav-link"
@@ -34,6 +40,7 @@ function Navbar() {
                     >
                         Register
                     </Link>
+                    
 
                 </div>
 
