@@ -1,30 +1,35 @@
+import { Link } from "react-router-dom";
 function Courses() {
     const courses = [
-        {
-            title: "Python Programming",
-            category: "Programming",
-            level: "Beginner",
-            type: "Free"
-        },
-        {
-            title: "Java Programming",
-            category: "Programming",
-            level: "Beginner",
-            type: "Premium"
-        },
-        {
-            title: "Web Development",
-            category: "Web Development",
-            level: "Intermediate",
-            type: "Free"
-        },
-        {
-            title: "Data Science",
-            category: "Data Science",
-            level: "Intermediate",
-            type: "Premium"
-        }
-    ];
+    {
+        id: 1,
+        title: "Python Programming",
+        category: "Programming",
+        level: "Beginner",
+        type: "Free"
+    },
+    {
+        id: 2,
+        title: "Java Programming",
+        category: "Programming",
+        level: "Beginner",
+        type: "Premium"
+    },
+    {
+        id: 3,
+        title: "Web Development",
+        category: "Web Development",
+        level: "Intermediate",
+        type: "Free"
+    },
+    {
+        id: 4,
+        title: "Data Science",
+        category: "Data Science",
+        level: "Intermediate",
+        type: "Premium"
+    }
+];
 
     return (
         <div className="container py-5">
@@ -63,9 +68,12 @@ function Courses() {
                                     Level: {course.level}
                                 </p>
 
-                                <button className="btn btn-outline-primary w-100">
-                                    View Course
-                                </button>
+                                <Link
+    to={`/courses/${course.id}`}
+    className="btn btn-outline-primary w-100"
+>
+    View Course
+</Link>
 
                             </div>
 
