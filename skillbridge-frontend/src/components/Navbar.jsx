@@ -26,6 +26,12 @@ function Navbar() {
 >
     Courses
 </Link>
+<Link
+    className="nav-link"
+    to="/skill-exchange"
+>
+    Skill Exchange
+</Link>
 
                     <Link
                         className="nav-link"
