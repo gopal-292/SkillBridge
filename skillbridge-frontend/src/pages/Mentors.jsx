@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 function Mentors() {
 
     const mentors = [
@@ -85,9 +86,12 @@ function Mentors() {
                                     ⭐ {mentor.rating}
                                 </p>
 
-                                <button className="btn btn-outline-primary w-100">
-                                    View Profile
-                                </button>
+                                <Link
+    to={`/mentors/${mentor.id}`}
+    className="btn btn-outline-primary w-100"
+>
+    View Profile
+</Link>npm run dev
 
                             </div>
 

@@ -9,6 +9,7 @@ import Courses from "./pages/Courses";
 import SkillExchange from "./pages/SkillExchange";
 import CourseDetails from "./pages/CourseDetails";
 import Mentors from "./pages/Mentors";
+import MentorDetails from "./pages/MentorDetails";
 
 function App() {
     return (
@@ -25,6 +26,8 @@ function App() {
                 <Route path="/skill-exchange"element={<SkillExchange />}/>
                 <Route path="/courses/:id"element={<CourseDetails />}/>
                 <Route path="/mentors"element={<Mentors />}/>
+                <Route path="/mentors/:id"element={<MentorDetails />}/>
+                
 
             </Routes>
 
