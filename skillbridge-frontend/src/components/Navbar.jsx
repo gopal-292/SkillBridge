@@ -32,6 +32,12 @@ function Navbar() {
 >
     Skill Exchange
 </Link>
+<Link
+    className="nav-link"
+    to="/mentors"
+>
+    Mentors
+</Link>
 
                     <Link
                         className="nav-link"

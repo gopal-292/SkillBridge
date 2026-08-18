@@ -7,6 +7,8 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Courses from "./pages/Courses";
 import SkillExchange from "./pages/SkillExchange";
+import CourseDetails from "./pages/CourseDetails";
+import Mentors from "./pages/Mentors";
 
 function App() {
     return (
@@ -21,6 +23,8 @@ function App() {
                 <Route path="/register" element={<Register />} />
                 <Route path="/courses" element={<Courses />} />
                 <Route path="/skill-exchange"element={<SkillExchange />}/>
+                <Route path="/courses/:id"element={<CourseDetails />}/>
+                <Route path="/mentors"element={<Mentors />}/>
 
             </Routes>
 
