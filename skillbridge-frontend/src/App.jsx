@@ -10,6 +10,7 @@ import SkillExchange from "./pages/SkillExchange";
 import CourseDetails from "./pages/CourseDetails";
 import Mentors from "./pages/Mentors";
 import MentorDetails from "./pages/MentorDetails";
+import ExchangeRequest from "./pages/ExchangeRequest";
 
 function App() {
     return (
