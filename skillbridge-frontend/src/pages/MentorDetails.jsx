@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function MentorDetails() {
 
@@ -142,9 +143,12 @@ function MentorDetails() {
                         ))}
                     </div>
 
-                    <button className="btn btn-primary mt-4">
-                        Request Skill Exchange
-                    </button>
+                    <Link
+    to={`/skill-exchange/request/${mentor.id}`}
+    className="btn btn-primary mt-4"
+>
+    Request Skill Exchange
+</Link>
 
                 </div>
 
