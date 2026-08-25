@@ -11,6 +11,7 @@ import CourseDetails from "./pages/CourseDetails";
 import Mentors from "./pages/Mentors";
 import MentorDetails from "./pages/MentorDetails";
 import ExchangeRequest from "./pages/ExchangeRequest";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
     return (
@@ -28,6 +29,8 @@ function App() {
                 <Route path="/courses/:id"element={<CourseDetails />}/>
                 <Route path="/mentors"element={<Mentors />}/>
                 <Route path="/mentors/:id"element={<MentorDetails />}/>
+                <Route path="/skill-exchange/request/:id"element={<ExchangeRequest />}/>
+                <Route path="/dashboard"element={<Dashboard />}/>
                 
 
             </Routes>
