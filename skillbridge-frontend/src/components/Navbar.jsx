@@ -44,6 +44,12 @@ function Navbar() {
 >
     Dashboard
 </Link>
+<Link
+    className="nav-link"
+    to="/profile"
+>
+    Profile
+</Link>
 
                     <Link
                         className="nav-link"
