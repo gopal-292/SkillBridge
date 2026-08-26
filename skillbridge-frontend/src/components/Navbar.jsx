@@ -50,6 +50,12 @@ function Navbar() {
 >
     Profile
 </Link>
+<Link
+    className="nav-link"
+    to="/notifications"
+>
+    Notifications
+</Link>
 
                     <Link
                         className="nav-link"
