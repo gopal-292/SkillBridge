@@ -14,6 +14,7 @@ import ExchangeRequest from "./pages/ExchangeRequest";
 import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
 import Notifications from "./pages/Notifications";
+import MyCourses from "./pages/MyCourses";
 
 function App() {
     return (
@@ -35,6 +36,7 @@ function App() {
                 <Route path="/dashboard"element={<Dashboard />}/>
                 <Route path="/profile"element={<Profile />}/>
                 <Route path="/notifications"element={<Notifications />}/>
+                <Route path="/my-courses"element={<MyCourses />}/>
 
             </Routes>
 
