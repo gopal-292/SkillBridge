@@ -1,8 +1,8 @@
-import { useParams } from "react-router-dom";
-
 function ExchangeRequest() {
-
-    const { id } = useParams();
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        alert("Exchange request sent successfully!");
+    };
 
     return (
         <div className="container py-5">
@@ -17,7 +17,7 @@ function ExchangeRequest() {
                     Send a request to connect with this mentor.
                 </p>
 
-                <form>
+                <form onSubmit={handleSubmit}>
 
                     <div className="mb-3">
                         <label className="form-label">
