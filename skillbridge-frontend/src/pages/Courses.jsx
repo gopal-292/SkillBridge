@@ -4,8 +4,13 @@ import { Link } from "react-router-dom";
 
 function Courses() {
 
+    // Search and filter states
     const [search, setSearch] = useState("");
+    const [category, setCategory] = useState("");
+    const [level, setLevel] = useState("");
+    const [type, setType] = useState("");
 
+    // Course data
     const courses = [
         {
             id: 1,
@@ -37,9 +42,41 @@ function Courses() {
         }
     ];
 
-    const filteredCourses = courses.filter((course) =>
-        course.title.toLowerCase().includes(search.toLowerCase())
-    );
+    // Filter courses
+    const filteredCourses = courses.filter((course) => {
+
+        const matchesSearch =
+            course.title
+                .toLowerCase()
+                .includes(search.toLowerCase());
+
+        const matchesCategory =
+            category === "" ||
+            course.category === category;
+
+        const matchesLevel =
+            level === "" ||
+            course.level === level;
+
+        const matchesType =
+            type === "" ||
+            course.type === type;
+
+        return (
+            matchesSearch &&
+            matchesCategory &&
+            matchesLevel &&
+            matchesType
+        );
+    });
+
+    // Clear all filters
+    const clearFilters = () => {
+        setSearch("");
+        setCategory("");
+        setLevel("");
+        setType("");
+    };
 
     return (
         <div className="container py-5">
@@ -56,9 +93,9 @@ function Courses() {
 
             </div>
 
-            {/* Search Box */}
+            {/* Search */}
 
-            <div className="row mb-5">
+            <div className="row mb-4">
 
                 <div className="col-md-8 mx-auto">
 
@@ -67,14 +104,127 @@ function Courses() {
                         className="form-control"
                         placeholder="Search courses..."
                         value={search}
-                        onChange={(e) => setSearch(e.target.value)}
+                        onChange={(e) =>
+                            setSearch(e.target.value)
+                        }
                     />
 
                 </div>
 
             </div>
 
-            {/* Course Cards */}
+            {/* Filters */}
+
+            <div className="row g-3 mb-4">
+
+                {/* Category */}
+
+                <div className="col-md-4">
+
+                    <select
+                        className="form-select"
+                        value={category}
+                        onChange={(e) =>
+                            setCategory(e.target.value)
+                        }
+                    >
+
+                        <option value="">
+                            All Categories
+                        </option>
+
+                        <option value="Programming">
+                            Programming
+                        </option>
+
+                        <option value="Web Development">
+                            Web Development
+                        </option>
+
+                        <option value="Data Science">
+                            Data Science
+                        </option>
+
+                    </select>
+
+                </div>
+
+                {/* Level */}
+
+                <div className="col-md-4">
+
+                    <select
+                        className="form-select"
+                        value={level}
+                        onChange={(e) =>
+                            setLevel(e.target.value)
+                        }
+                    >
+
+                        <option value="">
+                            All Levels
+                        </option>
+
+                        <option value="Beginner">
+                            Beginner
+                        </option>
+
+                        <option value="Intermediate">
+                            Intermediate
+                        </option>
+
+                        <option value="Advanced">
+                            Advanced
+                        </option>
+
+                    </select>
+
+                </div>
+
+                {/* Type */}
+
+                <div className="col-md-4">
+
+                    <select
+                        className="form-select"
+                        value={type}
+                        onChange={(e) =>
+                            setType(e.target.value)
+                        }
+                    >
+
+                        <option value="">
+                            All Types
+                        </option>
+
+                        <option value="Free">
+                            Free
+                        </option>
+
+                        <option value="Premium">
+                            Premium
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            {/* Clear Filters */}
+
+            <div className="text-center mb-5">
+
+                <button
+                    className="btn btn-outline-secondary"
+                    onClick={clearFilters}
+                >
+                    Clear Filters
+                </button>
+
+            </div>
+
+            {/* Course Results */}
 
             <div className="row g-4">
 
@@ -91,19 +241,31 @@ function Courses() {
 
                                 <div className="card-body">
 
+                                    {/* Course Type */}
+
                                     <span className="badge bg-primary mb-3">
                                         {course.type}
                                     </span>
 
-                                    <h4>{course.title}</h4>
+                                    {/* Course Title */}
+
+                                    <h4>
+                                        {course.title}
+                                    </h4>
+
+                                    {/* Category */}
 
                                     <p className="text-muted">
                                         {course.category}
                                     </p>
 
+                                    {/* Level */}
+
                                     <p>
                                         Level: {course.level}
                                     </p>
+
+                                    {/* View Course */}
 
                                     <Link
                                         to={`/courses/${course.id}`}
@@ -122,12 +284,16 @@ function Courses() {
 
                 ) : (
 
-                    <div className="text-center">
+                    /* No Courses */
 
-                        <h4>No courses found</h4>
+                    <div className="col-12 text-center">
+
+                        <h4>
+                            No courses found
+                        </h4>
 
                         <p className="text-muted">
-                            Try searching for another course.
+                            Try changing your search or filters.
                         </p>
 
                     </div>

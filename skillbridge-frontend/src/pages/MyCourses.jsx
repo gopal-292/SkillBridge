@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 
 function MyCourses() {
@@ -29,6 +30,8 @@ function MyCourses() {
     return (
         <div className="container py-5">
 
+            {/* Page Heading */}
+
             <div className="mb-5">
 
                 <h1>My Courses</h1>
@@ -38,6 +41,8 @@ function MyCourses() {
                 </p>
 
             </div>
+
+            {/* Course Cards */}
 
             <div className="row g-4">
 
@@ -52,6 +57,8 @@ function MyCourses() {
 
                             <div className="card-body">
 
+                                {/* Course Status */}
+
                                 <span
                                     className={`badge ${
                                         course.status === "Completed"
@@ -62,11 +69,19 @@ function MyCourses() {
                                     {course.status}
                                 </span>
 
-                                <h4>{course.title}</h4>
+                                {/* Course Title */}
+
+                                <h4>
+                                    {course.title}
+                                </h4>
+
+                                {/* Instructor */}
 
                                 <p className="text-muted">
                                     Instructor: {course.instructor}
                                 </p>
+
+                                {/* Progress */}
 
                                 <p className="mb-2">
                                     Progress: {course.progress}%
@@ -76,18 +91,26 @@ function MyCourses() {
 
                                     <div
                                         className="progress-bar"
+                                        role="progressbar"
                                         style={{
                                             width: `${course.progress}%`
                                         }}
+                                        aria-valuenow={course.progress}
+                                        aria-valuemin="0"
+                                        aria-valuemax="100"
                                     >
                                         {course.progress}%
                                     </div>
 
                                 </div>
 
+                                {/* Action Button */}
+
                                 {course.progress === 100 ? (
 
-                                    <button className="btn btn-success w-100">
+                                    <button
+                                        className="btn btn-success w-100"
+                                    >
                                         View Certificate
                                     </button>
 
